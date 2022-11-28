@@ -76,7 +76,7 @@ class TradfriBaseEntity(CoordinatorEntity[TradfriDeviceDataUpdateCoordinator]):
         """Return the device info."""
         info = self._device.device_info
         return DeviceInfo(
-            identifiers={(DOMAIN, self._device.id)},
+            identifiers={(DOMAIN, self._device.id, self._gateway_id)},
             manufacturer=info.manufacturer,
             model=info.model_number,
             name=self._device.name,
